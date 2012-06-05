@@ -3,7 +3,7 @@
 
 class TowersApp
   {
-      static int nDisks = 3;
+  static int nDisks = 3;
 
   public static void main(String[] args)
     {

@@ -38,22 +38,23 @@ class ArraySh
     while(h <= nElems/3)
       h = h * 3 + 1;  // {1,4,13,40,121,...}
 
-    while(h>0)
+    while(h>0) // controls h-sort (4-sort, 1-sort, etc)
       {
+      // manage the n-sort itself
       for(outer=h; outer<nElems; outer++)
         {
         temp = theArray[outer];
         inner = outer;
-
+        // perform the element swapping
         while(inner > h-1 && theArray[inner-h] >= temp)
           {
           theArray[inner] = theArray[inner-h];
-          inner -= h;
+          inner -= h; // shorthand for inner = inner - h
           }
         theArray[inner] = temp;
-        }
+        } // end for
       h = (h - 1) / 3;
-      }
+      } // end while
     }
   }
 ////////////////////////////////////////////////////////////////////////
